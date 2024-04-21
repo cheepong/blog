@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+author: "Pong"
 date: "2024-04-19"
 categories: [news]
 ---
