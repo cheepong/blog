@@ -107,6 +107,17 @@ categories: [skillset]
 - Both legs on the floor when pillion get up or down. Rider to brace the load when pillion get up or down
 
 ### Test Route
+![motorbike_test_route](motorbike_test_route.jpeg)
+
+- 6 Courses
+	- Slope
+	- S
+	- Crank
+	- Prank
+	- Pylon
+	- E Brake
+
+Video below mainly serve the purpose of additional tips:
 {{< video https://www.youtube.com/watch?v=eimqLUnOc7I& >}}
 - At junction
 	- Check right, left then back
