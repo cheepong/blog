@@ -117,6 +117,8 @@ categories: [skillset]
 	- Pylon
 	- E Brake
 
+![checklist](Motorbike_checklist.jpeg)
+
 Video below mainly serve the purpose of additional tips:
 {{< video https://www.youtube.com/watch?v=eimqLUnOc7I& >}}
 - At junction
