@@ -101,13 +101,13 @@ categories: [skillset]
 ### Crank Course
 {{< video https://www.youtube.com/watch?v=g89crpASwjE >}}
 
-# 5-01 Pillion and Test Riding Route
+# 5-01 Pillion and Circuit Test Riding Route
 ### Pillion
 - Keep the engine off when pillion get up or down
 - Both legs on the floor when pillion get up or down. Rider to brace the load when pillion get up or down
 
 ### Test Route
-![motorbike_test_route](motorbike_test_route.jpeg)
+![circuit_test_route](motorbike_test_route.jpeg)
 
 - 6 Courses
 	- Slope
@@ -123,4 +123,8 @@ Video below mainly serve the purpose of additional tips:
 {{< video https://www.youtube.com/watch?v=eimqLUnOc7I& >}}
 - At junction
 	- Check right, left then back
-	- Look ahead on the land filtering from the left
+	- Look ahead on the land filtering from the left  
+
+# 7 Road Test Riding Route
+Either refer to [google map](https://www.google.com/maps/d/edit?mid=1vXwRatYUALCSKXqeG5F_WGv-G5lbRfU&usp=sharing) or below.
+![road_test_route](bbdc_test_route.excalidraw.png)
