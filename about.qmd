@@ -17,3 +17,9 @@ about:
 ---
 
 About this blog
+
+I'm a Data Scientist from Singapore who has recently relocated to London. My professional background includes roles at Apple, Singtel, Grab, and the Ministry of Manpower.
+
+Currently, I'm expanding my expertise in machine learning engineering by pursuing an online Master of Science in Computer Science from Georgia Institute of Technology (GATECH).
+
+This blog serves as a chronicle of my journey living in London, while also being a platform for me to share my thoughts and experiences in data science, machine learning, and artificial intelligence.

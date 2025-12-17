@@ -1,5 +1,5 @@
 ---
-title: "."
+title: "SingaPong"
 listing:
   contents: posts
   sort: "date desc"
