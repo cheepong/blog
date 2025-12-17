@@ -1,10 +1,20 @@
 ---
-title: "Notes Taken for Class 2B"
+title: "Journey to Class 2B & Sharing of Learning Notes from BBDC"
 author: "Pong"
-date: "2024-04-22"
-categories: [skillset]
+date: "2025-06-09"
+categories: [motorbike, TP]
 ---
-# 1-02 Changing Gear
+# Journey
+<img src="bike_couple.jpeg" height="400">  
+
+We started our journey in Dec 2024 and only managed to get the license in Jun 2025. Not a easy journey but definitely worth doing it.
+
+<img src="familiarisation.jpeg" height="400">  
+
+<img src="parking.jpeg" height="400">  
+
+# Sharing of Learning Notes from BBDC
+## 1-02 Changing Gear
 ### Gear 1 to 2
 - throttle off and clutch in
 - Shift to gear 2
@@ -17,13 +27,13 @@ categories: [skillset]
 - Down gear to 1
 - If breaking, just footbrake. If continue moving, just slowly half clutch and throttle more
 
-# 1-03 High Speed Low Speed
+## 1-03 High Speed Low Speed
 ### Gear 1 Queuing
 - Clutch and Throttle off
 - Brake - Right hand on right brake (Don’t need to press, just touch), use footbrake more
 - D ???
 
-# 2-01 Left Turn & Slope
+## 2-01 Left Turn & Slope
 ### Left Turn (from stop line)
 - Gear 1 & already signal left
 - Check left right left
@@ -47,7 +57,7 @@ categories: [skillset]
 	- Check for turning direction
 	- Turn
 
-# 2-02 Right Turn & Changing Lane
+## 2-02 Right Turn & Changing Lane
 ### Right Turn (from stop line)
 - Gear 1 & already signal right
 - Check right, left (maybe a few times)
@@ -61,7 +71,7 @@ categories: [skillset]
 - Check mirror & blind spot
 - Throttle (accelerate) in that direction instead of bending too much
 
-# 3-01 Plank & Pylon Slalom 
+## 3-01 Plank & Pylon Slalom 
 ### Plank (Gear 1) & Need to finish longer than 6 Seconds
 - Clutch in & Throttle to 300 to 400 RPM 
 - Move off (half clutch) 
@@ -73,7 +83,7 @@ categories: [skillset]
 - move off change to gear 2 
 - when turning, either throttle off or footbrake slightly to slow down
 
-# 3-02 Emergency Break
+## 3-02 Emergency Break
 ### Emergency Break (runway for break is 70m)
 {{< video https://www.youtube.com/watch?v=MXoL8RF_o0M >}}
 - Get to gear 3 and speed of 30-35km/h before 35m
@@ -84,7 +94,7 @@ categories: [skillset]
 - Check left blind spot before putting left foot 
 - Check right blind before moving off
 
-# 4-01 S & Crank Course
+## 4-01 S & Crank Course
 ### S Course (Finish within 11 Seconds)
 {{< video https://www.youtube.com/watch?v=6rfQeliCu8E >}}
 - Check left blind spot and enter with 2nd gear
@@ -101,7 +111,7 @@ categories: [skillset]
 ### Crank Course
 {{< video https://www.youtube.com/watch?v=g89crpASwjE >}}
 
-# 5-01 Pillion and Circuit Test Riding Route
+## 5-01 Pillion and Circuit Test Riding Route
 ### Pillion
 - Keep the engine off when pillion get up or down
 - Both legs on the floor when pillion get up or down. Rider to brace the load when pillion get up or down
@@ -125,6 +135,6 @@ Video below mainly serve the purpose of additional tips:
 	- Check right, left then back
 	- Look ahead on the land filtering from the left  
 
-# 7 Road Test Riding Route
+## 7 Road Test Riding Route
 Either refer to [google map](https://www.google.com/maps/d/edit?mid=1vXwRatYUALCSKXqeG5F_WGv-G5lbRfU&usp=sharing) or below.
 ![road_test_route](bbdc_test_route.excalidraw.png)

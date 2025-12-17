@@ -1,9 +1,12 @@
 ---
 title: "About"
-image: profile.jpg
+image: sigtuna.jpeg
 about:
   template: jolla
   links:
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/cheekypong
     - icon: twitter
       text: Twitter
       href: https://twitter.com/cheepong89
