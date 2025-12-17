@@ -7,13 +7,6 @@
     "text": "About this blog\nI’m a Data Scientist from Singapore who has recently relocated to London. My professional background includes roles at Apple, Singtel, Grab, and the Ministry of Manpower.\nCurrently, I’m expanding my expertise in machine learning engineering by pursuing an online Master of Science in Computer Science from Georgia Institute of Technology (GATECH).\nThis blog serves as a chronicle of my journey living in London, while also being a platform for me to share my thoughts and experiences in data science, machine learning, and artificial intelligence."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/motorbike/motorbike.html",
     "href": "posts/motorbike/motorbike.html",
     "title": "Journey to Class 2B & Sharing of Learning Notes from BBDC",
@@ -88,6 +81,6 @@
     "href": "index.html",
     "title": "cheekypong",
     "section": "",
-    "text": "Journey to Class 2B & Sharing of Learning Notes from BBDC\n\n\n\nmotorbike\n\nTP\n\n\n\n\n\n\n\n\n\nJun 9, 2025\n\n\nPong\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 19, 2024\n\n\nPong\n\n\n\n\n\nNo matching items"
+    "text": "Journey to Class 2B & Sharing of Learning Notes from BBDC\n\n\n\nmotorbike\n\nTP\n\n\n\n\n\n\n\n\n\nJun 9, 2025\n\n\nPong\n\n\n\n\n\nNo matching items"
   }
 ]
