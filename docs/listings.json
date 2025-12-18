@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/frequentist_vs_bayesian/freq_vs_bayes.html",
       "/posts/motorbike/motorbike.html"
     ]
   }

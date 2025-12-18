@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Pong (with the help of Gemini)">
+<meta name="dcterms.date" content="2025-12-18">
 
-<title>cheekypong</title>
+<title>Frequentist vs.&nbsp;Bayesian Approaches: A Coin Flip Example – cheekypong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,77 +70,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">cheekypong</span>
     </a>
   </div>
@@ -151,7 +93,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -184,108 +126,97 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">cheekypong</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Frequentist vs.&nbsp;Bayesian Approaches: A Coin Flip Example</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Statistics</div>
+                <div class="quarto-category">Probability</div>
+                <div class="quarto-category">Bayesian</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Pong (with the help of Gemini) </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 18, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QmF5ZXNpYW4=">Bayesian <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW90b3JiaWtl">motorbike <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VFA=">TP <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Just wanted to share something short that was memorable for me from what I have learnt from OMSCS Bayesian Statistics. This interesting problem also striked me during a interview and I couldn’t resist not sharing it because it was quite mind-blowing for me when I first learn about it.</p>
+<p><img src="scenario.png" height="400"></p>
+<p>Imagine we’re presented with a coin and asked to determine its fairness. Specifically, to estimate the probability of it landing on heads. We decide to flip it 10 times to gather some data <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<section id="the-experiment" class="level3">
+<h3 class="anchored" data-anchor-id="the-experiment">The Experiment</h3>
+<p>The coin is flipped 10 times, and the result is quite surprising: <strong>0 heads and 10 tails</strong>.</p>
+<p>How do we estimate the probability of getting a head (<code>P(Head)</code>) based on this result? Let’s explore this using two major statistical paradigms: Frequentist and Bayesian.</p>
+</section>
+<section id="the-frequentist-approach" class="level3">
+<h3 class="anchored" data-anchor-id="the-frequentist-approach">The Frequentist Approach</h3>
+<p>The Frequentist approach relies solely on the observed data. A common method used is Maximum Likelihood Estimation (MLE), which finds the parameter value (in this case, <code>P(Head)</code>) that maximizes the probability of observing the collected data.</p>
+<p>For our experiment, the estimate is the frequency of heads divided by the total number of trials:</p>
+<p><code>P(Head) = (Number of Heads) / (Total Flips) = 0 / 10 = 0</code></p>
+<p>According to this result, the coin will never land on heads. While this aligns perfectly with our observed data, it feels intuitively wrong. A coin has two sides, and suggesting it’s impossible for one side to ever appear seems like an overly strong conclusion from just 10 flips.</p>
+</section>
+<section id="the-bayesian-approach" class="level3">
+<h3 class="anchored" data-anchor-id="the-bayesian-approach">The Bayesian Approach</h3>
+<p><img src="dist.png" height="400"></p>
+<p>The Bayesian approach allows us to incorporate prior beliefs into our estimation, which are then updated by the data we collect.</p>
+<ol type="1">
+<li><p><strong>Prior Belief</strong>: Before we even flip the coin, we can start with a belief about <code>P(Head)</code>. A reasonable and unbiased starting point is to assume that any probability from 0 to 1 is equally likely. This is represented by a Uniform distribution, which is a specific case of the Beta distribution: <code>Beta(1, 1)</code>.</p></li>
+<li><p><strong>Likelihood</strong>: This is the probability of our observed data (0 heads, 10 tails) given a certain <code>P(Head)</code>. This is described by the Binomial distribution.</p></li>
+<li><p><strong>Posterior Distribution</strong>: We combine our prior belief with the likelihood of our data to get an updated belief, known as the posterior distribution. When using a Beta distribution as a prior and a Binomial likelihood, the posterior is also a Beta distribution.</p></li>
+</ol>
+<p>The calculation for the posterior is: <code>Posterior ~ Beta(α_prior + k_heads, β_prior + n_tails)</code> <code>Posterior ~ Beta(1 + 0, 1 + 10) = Beta(1, 11)</code></p>
+<p>Instead of a single point estimate like the Frequentist method, the Bayesian approach gives us a full probability distribution for <code>P(Head)</code>. To get a single number, we can calculate the expected value (mean) of this posterior distribution.</p>
+<p>The expected value of a <code>Beta(α, β)</code> distribution is <code>α / (α + β)</code>.</p>
+<p>For our <code>Beta(1, 11)</code> posterior, the expected value is:</p>
+<p><code>E[P(Head)] = 1 / (1 + 11) = 1 / 12</code></p>
+</section>
+<section id="conclusion-why-bayesian-is-better-here" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion-why-bayesian-is-better-here">Conclusion: Why Bayesian is Better Here</h3>
+<p>In this scenario, the Bayesian approach provides a demonstrably more practical and intuitive answer.</p>
+<p>The Frequentist result, <code>P(Head) = 0</code>, is an extreme conclusion based on a very small dataset. It makes the absolute claim that heads are an impossibility, which is a fragile and unhelpful inference. If the 11th flip were to be a head, the estimate would lurch from 0 to <code>1/11</code>.</p>
+<p>The Bayesian estimate of <code>1/12</code> is far more robust. It acknowledges the strong evidence suggesting the coin is biased towards tails, but it wisely avoids making an absolute claim of impossibility. By incorporating a prior belief (that any probability is initially possible), it provides a balanced and reasonable estimate that reflects our uncertainty. This ability to blend prior knowledge with observed data makes the Bayesian framework a superior and more common-sense tool for reasoning under uncertainty, especially with limited data.</p>
 
 
+</section>
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U3RhdGlzdGljcyUyQ1Byb2JhYmlsaXR5JTJDQmF5ZXNpYW4=" data-listing-date-sort="1766012400000" data-listing-file-modified-sort="1766090655595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="637">
-<div class="thumbnail"><a href="./posts/frequentist_vs_bayesian/freq_vs_bayes.html" class="no-external">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<p class="card-img-top"><img src="posts/frequentist_vs_bayesian/scenario.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/frequentist_vs_bayesian/freq_vs_bayes.html" class="no-external">Frequentist vs.&nbsp;Bayesian Approaches: A Coin Flip Example</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QmF5ZXNpYW4='); return false;">Bayesian</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/frequentist_vs_bayesian/freq_vs_bayes.html" class="no-external">
-Just wanted to share something short that was memorable for me from what I have learnt from OMSCS Bayesian Statistics. This interesting problem also striked me during a…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/frequentist_vs_bayesian/freq_vs_bayes.html" class="no-external">
-<div class="listing-date">
-Dec 18, 2025
-</div>
-<div class="listing-author">
-Pong (with the help of Gemini)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bW90b3JiaWtlJTJDVFA=" data-listing-date-sort="1749420000000" data-listing-file-modified-sort="1765995655078" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="634">
-<div class="thumbnail"><a href="./posts/motorbike/motorbike.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/motorbike/bike_couple.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/motorbike/motorbike.html" class="no-external">Journey to Class 2B &amp; Sharing of Learning Notes from BBDC</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bW90b3JiaWtl'); return false;">motorbike</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VFA='); return false;">TP</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/motorbike/motorbike.html" class="no-external">
-We started our journey in Dec 2024 and only managed to get the license in Jun 2025. Not a easy journey but definitely worth doing it.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/motorbike/motorbike.html" class="no-external">
-<div class="listing-date">
-Jun 9, 2025
-</div>
-<div class="listing-author">
-Pong
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>Slides are taken directly from OMSCS Bayesian Statistics note.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

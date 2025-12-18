@@ -1,0 +1,64 @@
+---
+title: "Frequentist vs. Bayesian Approaches: A Coin Flip Example"
+author: "Pong (with the help of Gemini)"
+date: "2025-12-18"
+categories: [Statistics, Probability, Bayesian]
+---
+
+## Introduction
+
+Just wanted to share something short that was memorable for me from what I have learnt from OMSCS Bayesian Statistics. This interesting problem also striked me during a interview and I couldn't resist not sharing it because it was quite mind-blowing for me when I first learn about it.
+
+<img src="scenario.png" height="400">  
+
+Imagine we're presented with a coin and asked to determine its fairness. Specifically, to estimate the probability of it landing on heads. We decide to flip it 10 times to gather some data [^1].
+
+### The Experiment
+
+The coin is flipped 10 times, and the result is quite surprising: **0 heads and 10 tails**.
+
+How do we estimate the probability of getting a head (`P(Head)`) based on this result? Let's explore this using two major statistical paradigms: Frequentist and Bayesian.
+
+### The Frequentist Approach
+
+The Frequentist approach relies solely on the observed data. A common method used is Maximum Likelihood Estimation (MLE), which finds the parameter value (in this case, `P(Head)`) that maximizes the probability of observing the collected data.
+
+For our experiment, the estimate is the frequency of heads divided by the total number of trials:
+
+`P(Head) = (Number of Heads) / (Total Flips) = 0 / 10 = 0`
+
+According to this result, the coin will never land on heads. While this aligns perfectly with our observed data, it feels intuitively wrong. A coin has two sides, and suggesting it's impossible for one side to ever appear seems like an overly strong conclusion from just 10 flips.
+
+### The Bayesian Approach
+
+<img src="dist.png" height="400">  
+
+The Bayesian approach allows us to incorporate prior beliefs into our estimation, which are then updated by the data we collect.
+
+1.  **Prior Belief**: Before we even flip the coin, we can start with a belief about `P(Head)`. A reasonable and unbiased starting point is to assume that any probability from 0 to 1 is equally likely. This is represented by a Uniform distribution, which is a specific case of the Beta distribution: `Beta(1, 1)`.
+
+2.  **Likelihood**: This is the probability of our observed data (0 heads, 10 tails) given a certain `P(Head)`. This is described by the Binomial distribution.
+
+3.  **Posterior Distribution**: We combine our prior belief with the likelihood of our data to get an updated belief, known as the posterior distribution. When using a Beta distribution as a prior and a Binomial likelihood, the posterior is also a Beta distribution.
+
+The calculation for the posterior is:
+`Posterior ~ Beta(α_prior + k_heads, β_prior + n_tails)`
+`Posterior ~ Beta(1 + 0, 1 + 10) = Beta(1, 11)`
+
+Instead of a single point estimate like the Frequentist method, the Bayesian approach gives us a full probability distribution for `P(Head)`. To get a single number, we can calculate the expected value (mean) of this posterior distribution.
+
+The expected value of a `Beta(α, β)` distribution is `α / (α + β)`.
+
+For our `Beta(1, 11)` posterior, the expected value is:
+
+`E[P(Head)] = 1 / (1 + 11) = 1 / 12`
+
+### Conclusion: Why Bayesian is Better Here
+
+In this scenario, the Bayesian approach provides a demonstrably more practical and intuitive answer.
+
+The Frequentist result, `P(Head) = 0`, is an extreme conclusion based on a very small dataset. It makes the absolute claim that heads are an impossibility, which is a fragile and unhelpful inference. If the 11th flip were to be a head, the estimate would lurch from 0 to `1/11`.
+
+The Bayesian estimate of `1/12` is far more robust. It acknowledges the strong evidence suggesting the coin is biased towards tails, but it wisely avoids making an absolute claim of impossibility. By incorporating a prior belief (that any probability is initially possible), it provides a balanced and reasonable estimate that reflects our uncertainty. This ability to blend prior knowledge with observed data makes the Bayesian framework a superior and more common-sense tool for reasoning under uncertainty, especially with limited data.
+
+[^1]: Slides are taken directly from OMSCS Bayesian Statistics note.
