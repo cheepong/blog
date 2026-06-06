@@ -62,7 +62,8 @@ countries_data = [
     # New countries
     {"Country": "Hong Kong", "ISO3": "HKG", "Visited": 1},
     {"Country": "Taiwan", "ISO3": "TWN", "Visited": 1},
-    {"Country": "Sweden", "ISO3": "SWE", "Visited": 1}
+    {"Country": "Sweden", "ISO3": "SWE", "Visited": 1},
+    {"Country": "Spain", "ISO3": "ESP", "Visited": 1}
 ]
 
 # Create a DataFrame
