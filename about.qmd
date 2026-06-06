@@ -26,3 +26,79 @@ I'm a Data Scientist from Singapore who has recently relocated to London. My pro
 Currently, I'm expanding my expertise in machine learning engineering by pursuing an online Master of Science in Computer Science from Georgia Institute of Technology (GATECH).
 
 This blog serves as a chronicle of my journey living in London, while also being a platform for me to share my thoughts and experiences in data science, machine learning, and artificial intelligence.
+
+## Countries Visited
+
+```{python}
+#| echo: false
+#| output: asis
+import pandas as pd
+import plotly.express as px
+import plotly.colors
+
+# List of countries provided by the user
+countries_data = [
+    {"Country": "Singapore", "ISO3": "SGP", "Visited": 1},
+    {"Country": "United Kingdom", "ISO3": "GBR", "Visited": 1},
+    {"Country": "Malaysia", "ISO3": "MYS", "Visited": 1},
+    {"Country": "Indonesia", "ISO3": "IDN", "Visited": 1},
+    {"Country": "Thailand", "ISO3": "THA", "Visited": 1},
+    {"Country": "Cambodia", "ISO3": "KHM", "Visited": 1},
+    {"Country": "Vietnam", "ISO3": "VNM", "Visited": 1},
+    {"Country": "Brunei", "ISO3": "BRN", "Visited": 1},
+    {"Country": "Australia", "ISO3": "AUS", "Visited": 1},
+    {"Country": "New Zealand", "ISO3": "NZL", "Visited": 1},
+    {"Country": "United States", "ISO3": "USA", "Visited": 1},
+    {"Country": "Canada", "ISO3": "CAN", "Visited": 1},
+    {"Country": "France", "ISO3": "FRA", "Visited": 1},
+    {"Country": "Norway", "ISO3": "NOR", "Visited": 1},
+    {"Country": "Germany", "ISO3": "DEU", "Visited": 1},
+    {"Country": "China", "ISO3": "CHN", "Visited": 1},
+    {"Country": "Japan", "ISO3": "JPN", "Visited": 1},
+    {"Country": "Latvia", "ISO3": "LVA", "Visited": 1},
+    {"Country": "Lithuania", "ISO3": "LTU", "Visited": 1},
+    {"Country": "Estonia", "ISO3": "EST", "Visited": 1},
+    {"Country": "Finland", "ISO3": "FIN", "Visited": 1},
+    # New countries
+    {"Country": "Hong Kong", "ISO3": "HKG", "Visited": 1},
+    {"Country": "Taiwan", "ISO3": "TWN", "Visited": 1},
+    {"Country": "Sweden", "ISO3": "SWE", "Visited": 1}
+]
+
+# Create a DataFrame
+df = pd.DataFrame(countries_data)
+df['Visited_Category'] = df['Visited'].astype(str) # Convert to string for discrete coloring
+
+# Calculate statistics
+num_visited = len(df)
+total_countries_in_world = 195 # Approximation for recognized countries
+percentage_visited = (num_visited / total_countries_in_world) * 100
+
+# Print statistics (Quarto will render this as text)
+print(f"I have visited **{num_visited}** countries out of approximately **{total_countries_in_world}** in the world ({percentage_visited:.2f}%).")
+print("\n") # Add a newline for separation
+
+# Create the choropleth map
+fig = px.choropleth(df,
+                    locations="ISO3", # Use ISO3 codes
+                    locationmode="ISO-3", # Specify ISO-3 location mode
+                    color="Visited_Category", # Use the categorical column for color
+                    color_discrete_map={'1': plotly.colors.sequential.Blues[5]}, # Map '1' to a specific blue color
+                    title="Countries Visited",
+                    projection="natural earth",
+                    height=500,
+                    hover_name="Country", # Display country name on hover
+                    hover_data={"ISO3": False, "Visited_Category": False} # Exclude these from hover
+                   )
+# To remove the color bar for discrete colors, we can set `showlegend=False` in update_layout
+fig.update_layout(showlegend=False)
+
+# Update layout for better appearance
+fig.update_geos(showocean=True, oceancolor="LightBlue", showland=True, landcolor="LightGrey", showlakes=True, lakecolor="LightBlue")
+fig.update_layout(margin={"r":0,"t":50,"l":0,"b":0})
+
+# Display the figure in Quarto
+fig.show()
+
+
+```
