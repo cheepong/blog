@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+exclude: [ "_GEMINI.md" ]
 
 website:
   title: "cheekypong"
